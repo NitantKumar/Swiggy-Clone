@@ -1,6 +1,12 @@
+import { useDispatch } from "react-redux";
+import { addItem } from "../utils/cartSlice";
 import { Res_Photo } from "../utils/constants";
 
 const ItemList = ({data}) => {
+    const dispatch = useDispatch();
+    const handleAddItem = () => {
+        dispatch(addItem("pizza"));
+    };
     // console.log(data);
     return (
         <div>
@@ -16,7 +22,7 @@ const ItemList = ({data}) => {
                             <div className="bg-gray-200 text-slate-500 ">
                                 <span className="ml-1 mr-4 cursor-pointer">-</span>
                                 <span>Add</span>
-                                <span className="ml-1 mr-4 cursor-pointer">+</span>
+                                <span className="ml-1 mr-4 cursor-pointer" onClick={handleAddItem}>+</span>
                             </div>
                         </div>
                     </div>

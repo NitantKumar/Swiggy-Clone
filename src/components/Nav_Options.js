@@ -8,9 +8,9 @@ const Nav_Options = () => {
     const [btnName, setBtnName] = useState("Login");
     const isOnline = useOnlineStatus();
     const {loggedInUser} = useContext(UserContext);
-    console.log(loggedInUser);
 
     const cartItems = useSelector((store) => store.cart.items);
+    console.log(cartItems);
 
   return (
     <div>
